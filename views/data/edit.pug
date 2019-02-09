@@ -1,0 +1,48 @@
+html
+    head
+        title Edit Biodata
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+    body
+        div.container
+            h3(align="center") Tambah Data
+            form(action="/edit/" + data.id method="post" enctype="multipart/form-data")
+                table.table
+                    tr
+                        td Nama
+                        td 
+                            input(class="form-control" type="text" name="nama" value=data.nama required)
+                    tr
+                        td Alamat
+                        td 
+                            input(class="form-control" type="text" name="alamat" value=data.alamat)
+                    tr
+                        td No HP
+                        td
+                            input(class="form-control" type="text" name="telepon" value=data.telepon)
+                    tr
+                        td Foto
+                        td
+                            img(src="http://localhost:2000/images/"+data.foto, width=100)
+                    tr
+                        td Ganti Foto
+                        td
+                            input(class="form-control" type="file" name="foto")
+                    tr
+                        td Jenis Kelamin
+                        td
+                            if data.jk == "L"
+                                div.form-check.form-check-inline
+                                    input(class="form-check-input" type='radio' name="jk" value="L" checked=true) 
+                                    | L
+                                    input(class="form-check-input" type='radio' name="jk" value="P") 
+                                    | P
+                            else
+                                div.form-check.form-check-inline
+                                    input(class="form-check-input" type='radio' name="jk" value="L") 
+                                    | L
+                                    input(class="form-check-input" type='radio' name="jk" value="P" checked=true) 
+                                    | P
+                    tr
+                        td(colspan="2") 
+                            input(class="btn btn-success" type="submit" value="Edit")
+                            button(type='button' class="btn btn-success" onclick='self.history.back()') Kembali           

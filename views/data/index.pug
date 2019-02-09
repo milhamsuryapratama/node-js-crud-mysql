@@ -1,0 +1,32 @@
+html
+    head
+        title Selamat Datang
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+    body
+        div.container           
+            h3(align="center") Data
+            table.table.table-striped.table-bordered.table-hover.table-sm
+                tr
+                    td(colspan="7")
+                         a(class="btn btn-success" href="/create") Tambah
+                tr
+                    th NO
+                    th NAMA
+                    th ALAMAT
+                    th No HP
+                    th JK
+                    th FOTO
+                    th AKSI
+                for row, index in data
+                    tr
+                        td #{index + 1}
+                        td #{row.nama}
+                        td #{row.alamat}
+                        td #{row.telepon}
+                        td #{row.jk}
+                        td 
+                            img(src="http://localhost:2000/images/"+row.foto, width=100)
+                        td
+                            a(class="btn btn-danger" href="/hapus/" + row.id) Hapus
+                            |
+                            a(class="btn btn-primary" href="/edit/" + row.id) Ubah

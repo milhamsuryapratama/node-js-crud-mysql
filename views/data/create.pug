@@ -1,0 +1,38 @@
+html
+    head
+        title Tambah Biodata
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+    body
+        div.container
+            h3(align="center") Tambah Data
+            form(action="/create" method="post" enctype="multipart/form-data")
+                table.table
+                    tr
+                        td Nama
+                        td 
+                            input(class="form-control" type="text" name="nama" required)
+                    tr
+                        td Alamat
+                        td 
+                            input(class="form-control" type="text" name="alamat")
+                    tr
+                        td No HP
+                        td
+                            input(class="form-control" type="text" name="telepon" )
+                    tr
+                        td Foto
+                        td
+                            input(class="form-control" type="file" name="foto" required)
+                    tr
+                        td Jenis Kelamin
+                        td
+                            div.form-check.form-check-inline
+                                input(class="form-check-input" type='radio' name="jk" value="L") 
+                                | L
+                            div.form-check.form-check-inline
+                                input(class="form-check-input" type='radio' name="jk" value="P") 
+                                | P
+                    tr
+                        td(colspan="2") 
+                            input(class="btn btn-success" type="submit" value="Simpan")
+                            button(type='button' class="btn btn-success" onclick='self.history.back()') Kembali
