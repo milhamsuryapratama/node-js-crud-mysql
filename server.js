@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 const path = require('path')
+const session = require('express-session')
 
 require('dotenv').config()
 
@@ -31,6 +32,12 @@ app.use(function (req, res, next) {
     req.con = con
     next()
 })
+//user session
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 // parsing post data
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

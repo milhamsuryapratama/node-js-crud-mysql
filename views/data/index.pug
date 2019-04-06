@@ -8,7 +8,8 @@ html
             table.table.table-striped.table-bordered.table-hover.table-sm
                 tr
                     td(colspan="7")
-                         a(class="btn btn-success" href="/create") Tambah
+                         a(class="btn btn-success" href="/data/create") Tambah
+                         a(class="btn btn-success" href="/logout") Keluar
                 tr
                     th NO
                     th NAMA
@@ -27,6 +28,6 @@ html
                         td 
                             img(src="http://localhost:2000/images/"+row.foto, width=100)
                         td
-                            a(class="btn btn-danger" href="/hapus/" + row.id) Hapus
+                            a(class="btn btn-danger" href="/data/hapus/" + row.id) Hapus
                             |
-                            a(class="btn btn-primary" href="/edit/" + row.id) Ubah
+                            a(class="btn btn-primary" href="/data/edit/" + row.id) Ubah
